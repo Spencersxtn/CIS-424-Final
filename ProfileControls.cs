@@ -22,5 +22,10 @@ public class UserProfile
         this.name = name;
         this.region = region;
     }
+
+    public void UserProfileTest(UserProfile userProfile) 
+    {
+
+    }
 }
 
