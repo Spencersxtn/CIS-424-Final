@@ -12,7 +12,8 @@ namespace CIS_424_Final
         private void Form1_Load(object sender, EventArgs e)
         {
             AllocConsole();
-            Console.WriteLine("test");
+            Program.GetJson();
+            Console.WriteLine(Program.JsonData);
         }
 
         [DllImport("kernel32.dll", SetLastError = true)]
