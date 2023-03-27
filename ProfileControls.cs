@@ -1,31 +1,27 @@
 ﻿namespace CIS_424_Final;
+
+using Newtonsoft.Json;
 using System;
 
 public class UserProfile
 {
-    //Base variables. More can be added later.
-    private string username;
-    private string password;
-    private string name;
-    private string region;
-
     //Encapsulation.
-    public string Username { get => username; set => username = value; }
-    public string Password { get => password; set => password = value; }
-    public string Name { get => name; set => name = value; }
-    public string Region { get => region; set => region = value; }
+    public string Username { get; set; }
+    public string Password { get; set; }
+    public string Name { get; set; }
+    public string Region { get; set; }
 
     public UserProfile(string username, string password, string name, string region)
     {
-        this.username = username;
-        this.password = password;
-        this.name = name;
-        this.region = region;
+        this.Username = username;
+        this.Password = password;
+        this.Name = name;
+        this.Region = region;
     }
 
-    public void UserProfileTest(UserProfile userProfile) 
+    public string PrintUser()
     {
-
+        return "Username: " + this.Username + ".\nPassword: " + this.Password + ".\nName: " + this.Name + ".\nRegion: " + this.Region + ".";
     }
 }
 

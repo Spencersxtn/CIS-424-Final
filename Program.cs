@@ -1,8 +1,12 @@
+using Newtonsoft.Json;
+
 namespace CIS_424_Final
 {
     internal static class Program
     {
         public static string? JsonData;
+        public static string? JsonPath;
+        public static List<UserProfile> Users = new();
 
         static void Main()
         {
@@ -10,14 +14,19 @@ namespace CIS_424_Final
             Application.Run(new Form1());
         }
 
-        //This code may need to be adjusted for the final build.
+        //This function finds the Json file, takes the data from it, and turns it into UserProfile objects.
         public static void GetJson()
         {
+            //Find the correct path. This may need to be adjusted for the final build.
             string path = AppDomain.CurrentDomain.BaseDirectory;
             for (int i = 0 ; i < 4; i++)
                 path = Path.GetDirectoryName(path);
-            path = Path.Combine(path, "UserProfiles.json");
-            JsonData = File.ReadAllText(path);
+            JsonPath = Path.Combine(path, "UserProfiles.json");
+
+            //Read in the data as a string, and convert it to UserProfile objects.
+            JsonData = File.ReadAllText(JsonPath);
+            UserProfile userProfile = JsonConvert.DeserializeObject<UserProfile>(JsonData);
+            Users.Add(userProfile);
         }
     }
 }

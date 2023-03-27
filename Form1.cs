@@ -1,3 +1,4 @@
+using Newtonsoft.Json;
 using System.Runtime.InteropServices;
 
 namespace CIS_424_Final
@@ -13,7 +14,7 @@ namespace CIS_424_Final
         {
             AllocConsole();
             Program.GetJson();
-            Console.WriteLine(Program.JsonData);
+            Console.WriteLine(Program.Users[0].PrintUser());
         }
 
         [DllImport("kernel32.dll", SetLastError = true)]

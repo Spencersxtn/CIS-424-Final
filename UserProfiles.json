@@ -1,8 +1,6 @@
 {
-  "TestUserProfile": {
-    "username": "name",
-    "password": "password",
-    "name": "Bob",
-    "region":  "South Dakota"
-  }
+  "Username": "name",
+  "Password": "password",
+  "Name": "Bob",
+  "Region":  "South Dakota"
 }
