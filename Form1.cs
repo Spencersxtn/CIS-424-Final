@@ -14,7 +14,6 @@ namespace CIS_424_Final
         {
             AllocConsole();
             Program.GetJson();
-            Console.WriteLine(Program.Users[1].PrintUser());
         }
 
         [DllImport("kernel32.dll", SetLastError = true)]
