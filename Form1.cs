@@ -14,6 +14,8 @@ namespace CIS_424_Final
         {
             AllocConsole();
             Program.GetJson();
+            UserProfile userProfile = new UserProfile("test", "deleteme", "remove", "US");
+            userProfile.AddUser(Program.JsonPath);
         }
 
         [DllImport("kernel32.dll", SetLastError = true)]

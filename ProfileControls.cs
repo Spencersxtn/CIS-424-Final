@@ -1,9 +1,5 @@
 ﻿namespace CIS_424_Final;
-
-using Microsoft.VisualBasic.ApplicationServices;
 using Newtonsoft.Json;
-using System;
-using System.Security.Principal;
 
 public class UserProfile
 {
@@ -34,6 +30,15 @@ public class UserProfile
     public string PrintUser()
     {
         return "Username: " + this.Username + ".\nPassword: " + this.Password + ".\nName: " + this.Name + ".\nRegion: " + this.Region + ".";
+    }
+
+    //Run this after creating a new user, and it will update the Json file.
+    public void AddUser(string path)
+    {
+        string text = File.ReadAllText(path);
+        text = text.Remove(text.Length - 3, 1);
+        text = text + ",\n" + JsonConvert.SerializeObject(this, Formatting.Indented) + "\n}";
+        File.WriteAllText(path, text);
     }
 
     //These update functions will change the object and update the Json file.
