@@ -10,11 +10,5 @@
   "Password": "1235",
   "Name": "Jimmy",
   "Region": "South Dakota"
-},
-{
-  "Username": "test",
-  "Password": "deleteme",
-  "Name": "remove",
-  "Region": "US"
 }
 }

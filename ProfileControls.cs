@@ -1,5 +1,6 @@
 ﻿namespace CIS_424_Final;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 public class UserProfile
 {
@@ -38,6 +39,14 @@ public class UserProfile
         string text = File.ReadAllText(path);
         text = text.Remove(text.Length - 3, 1);
         text = text + ",\n" + JsonConvert.SerializeObject(this, Formatting.Indented) + "\n}";
+        File.WriteAllText(path, text);
+    }
+
+    //Run this right before deleting/removing the object to update the Json file.
+    public void DeleteUser(string path)
+    {
+        string text = File.ReadAllText(path);
+        text = text.Replace(",\n" + JsonConvert.SerializeObject(this, Formatting.Indented), "");
         File.WriteAllText(path, text);
     }
 
