@@ -11,6 +11,7 @@ namespace CIS_424_Final
         {
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
+            GetJson();
         }
 
         //This function finds the Json file, takes the data from it, and turns it into UserProfile objects.

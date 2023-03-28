@@ -13,12 +13,6 @@ namespace CIS_424_Final
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            AllocConsole();
-            Program.GetJson();
         }
-
-        [DllImport("kernel32.dll", SetLastError = true)]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        static extern bool AllocConsole();
     }
 }

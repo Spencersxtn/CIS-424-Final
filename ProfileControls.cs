@@ -1,6 +1,5 @@
 ﻿namespace CIS_424_Final;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 
 public class UserProfile
 {
@@ -10,6 +9,8 @@ public class UserProfile
     public string Name { get; set; }
     public string Region { get; set; }
 
+    //Default constructor and Copy constructor
+    #region Constructors
     [JsonConstructor]
     public UserProfile(string username, string password, string name, string region)
     {
@@ -26,6 +27,7 @@ public class UserProfile
         this.Name = userProfile.Name;
         this.Region = userProfile.Region;
     }
+    #endregion Constructors
 
     //Returns the object formatted nicely as a string.
     public string PrintUser()
@@ -51,6 +53,7 @@ public class UserProfile
     }
 
     //These update functions will change the object and update the Json file.
+    #region Update Functions
     public void UpdateUsername(string path, string value)
     {
         UserProfile userProfile = new(this);
@@ -86,5 +89,6 @@ public class UserProfile
         text = text.Replace(JsonConvert.SerializeObject(userProfile, Formatting.Indented), JsonConvert.SerializeObject(this, Formatting.Indented));
         File.WriteAllText(path, text);
     }
+    #endregion Update Functions
 }
 
