@@ -1,4 +1,8 @@
 using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.IO;
+
 
 namespace CIS_424_Final
 {
@@ -10,8 +14,7 @@ namespace CIS_424_Final
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
-            GetJson();
+            Application.Run(new LoginForm());
         }
 
         //This function finds the Json file, takes the data from it, and turns it into UserProfile objects.
