@@ -4,9 +4,9 @@ using System.Runtime.InteropServices;
 
 namespace CIS_424_Final
 {
-    public partial class Form1 : Form
+    public partial class mainPage : Form
     {
-        public Form1()
+        public mainPage()
         {
             InitializeComponent();
         }

@@ -1,6 +1,6 @@
 ﻿namespace CIS_424_Final
 {
-    partial class Form1
+    partial class mainPage
     {
         /// <summary>
         ///  Required designer variable.
@@ -30,13 +30,14 @@
         {
             SuspendLayout();
             // 
-            // Form1
+            // mainPage
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Name = "Form1";
-            Text = "Form1";
+            ClientSize = new Size(1486, 960);
+            Margin = new Padding(6, 6, 6, 6);
+            Name = "mainPage";
+            Text = "mainPage";
             Load += Form1_Load;
             ResumeLayout(false);
         }
