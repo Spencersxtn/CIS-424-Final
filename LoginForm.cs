@@ -50,7 +50,7 @@ namespace CIS_424_Final
 
         private void button2_Click(object sender, EventArgs e)
         {
-            // TODO: Add code to show registration form
+            //  Add code to show registration form
             MessageBox.Show("Registration form not implemented.");
         }
 
