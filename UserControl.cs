@@ -3,7 +3,7 @@
     public class UserControl
     {
         #region Attributes
-        public UserProfile? currentUser { get; set; }
+        public UserProfile? currentUser { get; private set; }
         #endregion
 
         #region Constructors

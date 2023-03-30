@@ -26,7 +26,7 @@ namespace CIS_424_Final
 
 
             // Find user profile in list of users
-            UserProfile user = Program.Users.FirstOrDefault(u => u.Username == username && u.Password == password);
+            UserProfile? user = Program.Users.FirstOrDefault(u => u.Username == username && u.Password == password);
 
             if (user != null)
             {
