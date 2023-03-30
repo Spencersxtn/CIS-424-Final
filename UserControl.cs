@@ -14,6 +14,11 @@
         #endregion
 
         #region Methods
+        public void LogIn(UserProfile user)
+        {
+            this.currentUser = user;
+        }
+
         public void LogOut()
         {
             this.currentUser = null;

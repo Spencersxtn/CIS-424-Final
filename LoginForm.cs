@@ -31,6 +31,7 @@ namespace CIS_424_Final
             if (user != null)
             {
                 // Login successful, display welcome message
+                Program.UserControl.LogIn(user);
                 mainPage page = new mainPage();
                 page.Show();
                 
