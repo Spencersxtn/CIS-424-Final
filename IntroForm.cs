@@ -24,14 +24,14 @@ namespace IntroForm
             loginRedirect.Show();
             this.Hide();
         }
-
+            
         private void btnRegister_Click(object sender, EventArgs e)
         {
             // send user to the register form
             // possibly fix names if the register form is different
-            RegisterForm registerRedirect = new RegisterForm();
+            /*RegisterForm registerRedirect = new RegisterForm();
             registerRedirect.Show();
-            this.Hide();
+            this.Hide();*/
         }
     }
 }
