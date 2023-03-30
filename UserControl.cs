@@ -29,7 +29,7 @@
             return this._currentUser != null;
         }
 
-        public string _currentUserUsername()
+        public string CurrentUserUsername()
         {
             if (this.UserLoggedIn())
             {
@@ -41,7 +41,7 @@
             }
         }
 
-        public string _currentUserName()
+        public string CurrentUserName()
         {
             if (this.UserLoggedIn())
             {
@@ -53,7 +53,7 @@
             }
         }
 
-        public string _currentUserRegion()
+        public string CurrentUserRegion()
         {
             if (this.UserLoggedIn())
             {
