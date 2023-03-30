@@ -24,11 +24,16 @@
             this.CurrentUser = null;
         }
 
+        public bool UserLoggedIn()
+        {
+            return this.CurrentUser != null;
+        }
+
         public string CurrentUserUsername()
         {
-            if (this.CurrentUser != null)
+            if (this.UserLoggedIn())
             {
-                return CurrentUser.Username;
+                return this.CurrentUser.Username;
             }
             else
             {
@@ -38,9 +43,9 @@
 
         public string CurrentUserName()
         {
-            if (this.CurrentUser != null)
+            if (this.UserLoggedIn())
             {
-                return CurrentUser.Name;
+                return this.CurrentUser.Name;
             }
             else
             {
@@ -50,9 +55,9 @@
 
         public string CurrentUserRegion()
         {
-            if (this.CurrentUser != null)
+            if (this.UserLoggedIn())
             {
-                return CurrentUser.Region;
+                return this.CurrentUser.Region;
             }
             else
             {
