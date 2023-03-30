@@ -35,7 +35,7 @@ namespace CIS_424_Final
                 mainPage page = new mainPage();
                 page.Show();
                 
-                MessageBox.Show($"Welcome, {user.Name} from {user.Region}!");
+                MessageBox.Show($"Welcome, {Program.UserControl.CurrentUserName()} from {Program.UserControl.CurrentUserRegion()}!");
             }
             else
             {
