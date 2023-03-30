@@ -3,37 +3,37 @@
     public class UserControl
     {
         #region Attributes
-        private UserProfile? CurrentUser { get; set; }
+        private UserProfile? _currentUser;
         #endregion
 
         #region Constructors
         public UserControl()
         {
-            this.CurrentUser = null;
+            this._currentUser = null;
         }
         #endregion
 
         #region Methods
         public void LogIn(UserProfile user)
         {
-            this.CurrentUser = user;
+            this._currentUser = user;
         }
 
         public void LogOut()
         {
-            this.CurrentUser = null;
+            this._currentUser = null;
         }
 
         public bool UserLoggedIn()
         {
-            return this.CurrentUser != null;
+            return this._currentUser != null;
         }
 
-        public string CurrentUserUsername()
+        public string _currentUserUsername()
         {
             if (this.UserLoggedIn())
             {
-                return this.CurrentUser.Username;
+                return this._currentUser.Username;
             }
             else
             {
@@ -41,11 +41,11 @@
             }
         }
 
-        public string CurrentUserName()
+        public string _currentUserName()
         {
             if (this.UserLoggedIn())
             {
-                return this.CurrentUser.Name;
+                return this._currentUser.Name;
             }
             else
             {
@@ -53,11 +53,11 @@
             }
         }
 
-        public string CurrentUserRegion()
+        public string _currentUserRegion()
         {
             if (this.UserLoggedIn())
             {
-                return this.CurrentUser.Region;
+                return this._currentUser.Region;
             }
             else
             {
