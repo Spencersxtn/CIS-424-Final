@@ -23,8 +23,11 @@ namespace CIS_424_Final
         {
             //Find the correct path. This may need to be adjusted for the final build.
             string path = AppDomain.CurrentDomain.BaseDirectory;
-            for (int i = 0 ; i < 4; i++)
+
+            //These lines are not necessary for the release version of the project.
+            //for (int i = 0 ; i < 4; i++)
                 path = Path.GetDirectoryName(path);
+
             JsonPath = Path.Combine(path, "UserProfiles.json");
 
             //Read in the data as a string, and convert it to seperate strings.
