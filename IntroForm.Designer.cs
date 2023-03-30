@@ -1,4 +1,4 @@
-﻿namespace IntroForm
+﻿namespace CIS_424_Final
 {
     partial class IntroForm
     {
