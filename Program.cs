@@ -10,6 +10,7 @@ namespace CIS_424_Final
     {
         public static string? JsonPath;
         public static List<UserProfile> Users = new();
+        public static UserControl UserControl = new();
 
         static void Main()
         {
