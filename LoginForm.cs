@@ -32,8 +32,9 @@ namespace CIS_424_Final
             {
                 // Login successful, display welcome message
                 Program.UserControl.LogIn(user);
-                mainPage page = new mainPage();
+                mainPage page = new();
                 page.Show();
+                this.Hide();
                 
                 MessageBox.Show($"Welcome, {Program.UserControl.CurrentUserName()} from {Program.UserControl.CurrentUserRegion()}!");
             }
@@ -44,15 +45,18 @@ namespace CIS_424_Final
             }
         }
 
+        //Exit application
         private void button1_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
+        //Registration page
         private void button2_Click(object sender, EventArgs e)
         {
-            //  Add code to show registration form
-            MessageBox.Show("Registration form not implemented.");
+            RegistrationForm registrationForm = new();
+            registrationForm.Show();
+            this.Hide();
         }
 
         private void button3_Click(object sender, EventArgs e)

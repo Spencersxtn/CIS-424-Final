@@ -21,24 +21,26 @@ namespace CIS_424_Final
 
         private void RegisterButton_Click(object sender, EventArgs e)
         {
-            dynamic RegisterObject = new ExpandoObject();
-
-            RegisterObject.Username = UsernameText.Text;
-            RegisterObject.Password = PasswordText.Text;
-            RegisterObject.Name = NameText.Text;
-            RegisterObject.Region = RegionText.Text;
-
-            File.WriteAllText(@"UserProfiles.json", JsonConvert.SerializeObject(RegisterObject, Formatting.Indented));
+            UserProfile newUser = new(UsernameText.Text, PasswordText.Text, NameText.Text, RegionText.Text);
+            Program.Users.Add(newUser);
+            newUser.AddUser(Program.JsonPath);
+            MessageBox.Show("Successfully Registered!");
+            mainPage form = new();
+            form.Show();
+            this.Hide();
         }
 
         private void LoginLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             LoginForm form = new LoginForm();
             form.Show();
+            this.Hide();
         }
 
         private void CancelButton_Click(object sender, EventArgs e)
         {
+            LoginForm loginForm = new();
+            loginForm.Show();
             this.Close();
         }
     }

@@ -28,14 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Logout = new Button();
             SuspendLayout();
+            // 
+            // Logout
+            // 
+            Logout.Location = new Point(406, 157);
+            Logout.Name = "Logout";
+            Logout.Size = new Size(75, 23);
+            Logout.TabIndex = 0;
+            Logout.Text = "Logout";
+            Logout.UseVisualStyleBackColor = true;
+            Logout.Click += button1_Click;
             // 
             // mainPage
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1486, 960);
-            Margin = new Padding(6, 6, 6, 6);
+            ClientSize = new Size(800, 450);
+            Controls.Add(Logout);
             Name = "mainPage";
             Text = "mainPage";
             Load += Form1_Load;
@@ -43,5 +54,7 @@
         }
 
         #endregion
+
+        private Button Logout;
     }
 }
