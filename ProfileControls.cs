@@ -45,6 +45,18 @@ public class UserProfile
         File.WriteAllText(path, text);
     }
 
+    //This overload will check if there is any user already in the file with this username.
+    public bool AddUser(string path, string username)
+    {
+        string text = File.ReadAllText(path);
+        if (text.Contains("\"Username\": \"" +  username + "\","))
+            return false;
+        text = text.Remove(text.Length - 3, 1);
+        text = text + ",\n" + JsonConvert.SerializeObject(this, Formatting.Indented) + "\n}";
+        File.WriteAllText(path, text);
+        return true;
+    }
+
     //Run this right before deleting/removing the object to update the Json file.
     public void DeleteUser(string path)
     {
@@ -55,15 +67,6 @@ public class UserProfile
 
     //These update functions will change the object and update the Json file.
     #region Update Functions
-    public void UpdateUsername(string path, string value)
-    {
-        UserProfile userProfile = new(this);
-        this.Username = value;
-        string text = File.ReadAllText(path);
-        text = text.Replace(JsonConvert.SerializeObject(userProfile, Formatting.Indented), JsonConvert.SerializeObject(this, Formatting.Indented));
-        File.WriteAllText(path, text);
-    }
-
     public void UpdatePassword(string path, string value)
     {
         UserProfile userProfile = new(this);

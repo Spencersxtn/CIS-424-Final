@@ -23,11 +23,15 @@ namespace CIS_424_Final
         {
             UserProfile newUser = new(UsernameText.Text, PasswordText.Text, NameText.Text, RegionText.Text);
             Program.Users.Add(newUser);
-            newUser.AddUser(Program.JsonPath);
-            MessageBox.Show("Successfully Registered!");
-            mainPage form = new();
-            form.Show();
-            this.Hide();
+            if (!newUser.AddUser(Program.JsonPath, newUser.Username))
+                MessageBox.Show("This Username is already taken.");
+            else
+            {
+                MessageBox.Show("Successfully Registered!");
+                mainPage form = new();
+                form.Show();
+                this.Hide();
+            }
         }
 
         private void LoginLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
