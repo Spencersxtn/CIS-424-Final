@@ -23,5 +23,26 @@ namespace CIS_424_Final
             loginForm.Show();
             this.Hide();
         }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Program.UserControl.LogOut();
+            MessageBox.Show("You have successfully logged out.");
+            LoginForm loginForm = new();
+            loginForm.Show();
+            this.Hide();
+        }
+
+        private void introPageToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            IntroForm frm = new IntroForm();
+            frm.Show();
+        }
+
+        private void registerationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegistrationForm regForm = new RegistrationForm();
+            regForm.Show();
+        }
     }
 }

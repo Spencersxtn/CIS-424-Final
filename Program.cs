@@ -25,7 +25,7 @@ namespace CIS_424_Final
             string path = AppDomain.CurrentDomain.BaseDirectory;
 
             //These lines are not necessary for the release version of the project.
-            //for (int i = 0 ; i < 4; i++)
+            for (int i = 0 ; i < 4; i++)
                 path = Path.GetDirectoryName(path);
 
             JsonPath = Path.Combine(path, "UserProfiles.json");
