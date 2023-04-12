@@ -11,7 +11,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Plants.json" />
     <None Remove="UserProfiles.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Plants.json" />
   </ItemGroup>
 
   <ItemGroup>
