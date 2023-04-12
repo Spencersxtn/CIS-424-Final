@@ -3,32 +3,37 @@
     public class UserControl
     {
         #region Attributes
-        private UserProfile? CurrentUser { get; set; }
+        private UserProfile? _currentUser;
         #endregion
 
         #region Constructors
         public UserControl()
         {
-            this.CurrentUser = null;
+            this._currentUser = null;
         }
         #endregion
 
         #region Methods
         public void LogIn(UserProfile user)
         {
-            this.CurrentUser = user;
+            this._currentUser = user;
         }
 
         public void LogOut()
         {
-            this.CurrentUser = null;
+            this._currentUser = null;
+        }
+
+        public bool UserLoggedIn()
+        {
+            return this._currentUser != null;
         }
 
         public string CurrentUserUsername()
         {
-            if (this.CurrentUser != null)
+            if (this.UserLoggedIn())
             {
-                return CurrentUser.Username;
+                return this._currentUser.Username;
             }
             else
             {
@@ -38,9 +43,9 @@
 
         public string CurrentUserName()
         {
-            if (this.CurrentUser != null)
+            if (this.UserLoggedIn())
             {
-                return CurrentUser.Name;
+                return this._currentUser.Name;
             }
             else
             {
@@ -50,9 +55,45 @@
 
         public string CurrentUserRegion()
         {
-            if (this.CurrentUser != null)
+            if (this.UserLoggedIn())
             {
-                return CurrentUser.Region;
+                return this._currentUser.Region;
+            }
+            else
+            {
+                throw new Exception();
+            }
+        }
+
+        public void UpdateUserPassword(string password)
+        {
+            if (this.UserLoggedIn())
+            {
+                this._currentUser.UpdatePassword(Program.JsonPath, password);
+            }
+            else
+            {
+                throw new Exception();
+            }
+        }
+
+        public void UpdateUserName(string name)
+        {
+            if (this.UserLoggedIn())
+            {
+                this._currentUser.UpdatePassword(Program.JsonPath, name);
+            }
+            else
+            {
+                throw new Exception();
+            }
+        }
+
+        public void UpdateUserRegion(string region)
+        {
+            if (this.UserLoggedIn())
+            {
+                this._currentUser.UpdatePassword(Program.JsonPath, region);
             }
             else
             {
