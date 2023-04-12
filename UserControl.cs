@@ -64,6 +64,42 @@
                 throw new Exception();
             }
         }
+
+        public void UpdateUserPassword(string password)
+        {
+            if (this.UserLoggedIn())
+            {
+                this._currentUser.UpdatePassword(Program.JsonPath, password);
+            }
+            else
+            {
+                throw new Exception();
+            }
+        }
+
+        public void UpdateUserName(string name)
+        {
+            if (this.UserLoggedIn())
+            {
+                this._currentUser.UpdatePassword(Program.JsonPath, name);
+            }
+            else
+            {
+                throw new Exception();
+            }
+        }
+
+        public void UpdateUserRegion(string region)
+        {
+            if (this.UserLoggedIn())
+            {
+                this._currentUser.UpdatePassword(Program.JsonPath, region);
+            }
+            else
+            {
+                throw new Exception();
+            }
+        }
         #endregion
     }
 }
