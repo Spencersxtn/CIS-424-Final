@@ -7,6 +7,11 @@ namespace CIS_424_Final
         #region Methods
         public static void AddPlant(string path, Plant plant)
         {
+            if (RetrievePlant(path, plant.Name) != null)
+            {
+                throw new Exception();
+            }
+
             string text = File.ReadAllText(path);
             text = text.Remove(text.Length - 3, 1);
             text += ",\n" + JsonConvert.SerializeObject(plant, Formatting.Indented) + "\n}";
@@ -15,6 +20,11 @@ namespace CIS_424_Final
 
         public static void DeletePlant(string path, Plant plant)
         {
+            if (RetrievePlant(path, plant.Name) == null)
+            {
+                throw new Exception();
+            }
+
             string text = File.ReadAllText(path);
             text = text.Replace(",\n" + JsonConvert.SerializeObject(plant, Formatting.Indented), "");
             File.WriteAllText(path, text);
