@@ -69,7 +69,6 @@
         {
             if (this.UserLoggedIn())
             {
-                this._currentUser.Password = password;
                 this._currentUser.UpdatePassword(Program.JsonPath, password);
             }
             else
@@ -82,8 +81,7 @@
         {
             if (this.UserLoggedIn())
             {
-                this._currentUser.Name = name;
-                this._currentUser.UpdatePassword(Program.JsonPath, name);
+                this._currentUser.UpdateName(Program.JsonPath, name);
             }
             else
             {
@@ -95,8 +93,7 @@
         {
             if (this.UserLoggedIn())
             {
-                this._currentUser.Region = region;
-                this._currentUser.UpdatePassword(Program.JsonPath, region);
+                this._currentUser.UpdateRegion(Program.JsonPath, region);
             }
             else
             {
