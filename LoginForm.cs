@@ -10,6 +10,7 @@ namespace CIS_424_Final
         public LoginForm()
         {
             InitializeComponent();
+            this.CenterToScreen();
         }
 
         private void LoginForm_Load(object sender, EventArgs e)

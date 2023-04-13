@@ -15,6 +15,7 @@ namespace CIS_424_Final
         public mainPage()
         {
             InitializeComponent();
+            this.CenterToScreen();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -43,7 +44,7 @@ namespace CIS_424_Final
 
         private void changeProfileToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            IntroForm frm = new IntroForm();
+            AccountManagement frm = new AccountManagement();
             frm.Show();
             this.Hide();
         }
