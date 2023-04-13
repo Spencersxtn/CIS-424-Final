@@ -37,6 +37,12 @@ namespace CIS_424_Final
             return JsonConvert.DeserializeObject<Plant>("{" + plant + "}");
         }
 
+        public static List<Plant> RetrievePlants(string path)
+        {
+            List<string> plantData = File.ReadAllText(path).Split('{', '}').ToList();
+            return plantData.ConvertAll(p => JsonConvert.DeserializeObject<Plant>("{" + p + "}"));
+        }
+
         public static void UpdatePlant(string path, Plant plant)
         {
             Plant oldPlant = RetrievePlant(path, plant.Name);
