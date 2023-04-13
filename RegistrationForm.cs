@@ -28,6 +28,7 @@ namespace CIS_424_Final
                 MessageBox.Show("This Username is already taken.");
             else
             {
+                Program.UserControl.LogIn(newUser);
                 MessageBox.Show("Successfully Registered!");
                 mainPage form = new();
                 form.Show();
