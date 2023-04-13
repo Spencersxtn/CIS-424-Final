@@ -9,6 +9,7 @@ namespace CIS_424_Final
     internal static class Program
     {
         public static string? JsonPath;
+        public static string? PlantPath;
         public static List<UserProfile> Users = new();
         public static UserControl UserControl = new();
 
@@ -29,6 +30,7 @@ namespace CIS_424_Final
                 path = Path.GetDirectoryName(path);
 
             JsonPath = Path.Combine(path, "UserProfiles.json");
+            PlantPath = Path.Combine(path, "Plants.json");
 
             //Read in the data as a string, and convert it to seperate strings.
             string JsonData = File.ReadAllText(JsonPath);

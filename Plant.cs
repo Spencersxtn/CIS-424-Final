@@ -6,17 +6,18 @@ namespace CIS_424_Final
     {
         #region Attributes
         public string Name { get; set; }
-        public string Sunlight { get; set; }
         public string Region { get; set; }
+
+        public string Sunlight { get; set; }
         #endregion
 
         #region Constructors
         [JsonConstructor]
-        public Plant(string name, string sunlight, string region)
+        public Plant(string name, string region, string sunlight)
         {
             this.Name = name;
-            this.Sunlight = sunlight;
             this.Region = region;
+            this.Sunlight = sunlight;
         }
         #endregion
     }

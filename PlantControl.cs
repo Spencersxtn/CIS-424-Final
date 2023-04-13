@@ -1,4 +1,7 @@
 ﻿using Newtonsoft.Json;
+using System.ComponentModel;
+using System.Data;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace CIS_424_Final
 {
@@ -41,6 +44,11 @@ namespace CIS_424_Final
         {
             List<string> plantData = File.ReadAllText(path).Split('{', '}').ToList();
             return plantData.ConvertAll(p => JsonConvert.DeserializeObject<Plant>("{" + p + "}"));
+        }
+
+        public static DataTable RetrievePlantTable(string path)
+        {
+            return JsonConvert.DeserializeObject<DataTable>(File.ReadAllText(path));
         }
 
         public static void UpdatePlant(string path, Plant plant)
