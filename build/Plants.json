@@ -1,0 +1,42 @@
+﻿[
+  {
+    "Name": "Common Milkweed",
+    "Region": "Midwest",
+    "Sunlight": "Full Sun"
+  },
+  {
+    "Name": "Showy Goldenrod",
+    "Region": "Midwest",
+    "Sunlight": "Full Sun"
+  },
+  {
+    "Name": "Red Columbine",
+    "Region": "Midwest",
+    "Sunlight": "Shade"
+  },
+  {
+    "Name": "American Hazelnut",
+    "Region": "Midwest",
+    "Sunlight": "Part Sun"
+  },
+  {
+    "Name": "Elderberry",
+    "Region": "Midwest",
+    "Sunlight": "Part Sun"
+  },
+  {
+    "Name": "Ironweed",
+    "Region": "Midwest",
+    "Sunlight": "Full Sun"
+  },
+  {
+    "Name": "Big Bluestem",
+    "Region": "Midwest",
+    "Sunlight": "Full Sun"
+  },
+  {
+    "Name": "Tall Bellflower",
+    "Region": "Midwest",
+    "Sunlight": "Shade"
+  }
+]
