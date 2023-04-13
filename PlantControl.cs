@@ -1,7 +1,5 @@
 ﻿using Newtonsoft.Json;
-using System.ComponentModel;
 using System.Data;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace CIS_424_Final
 {
@@ -59,6 +57,5 @@ namespace CIS_424_Final
             File.WriteAllText(path, text);
         }
         #endregion
-
     }
 }
