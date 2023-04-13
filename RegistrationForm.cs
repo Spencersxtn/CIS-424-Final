@@ -17,6 +17,7 @@ namespace CIS_424_Final
         public RegistrationForm()
         {
             InitializeComponent();
+            this.CenterToScreen();
         }
 
         private void RegisterButton_Click(object sender, EventArgs e)

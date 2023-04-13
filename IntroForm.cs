@@ -15,6 +15,7 @@ namespace CIS_424_Final
         public IntroForm()
         {
             InitializeComponent();
+            this.CenterToScreen();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
