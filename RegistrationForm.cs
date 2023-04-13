@@ -45,9 +45,9 @@ namespace CIS_424_Final
 
         private void CancelButton_Click(object sender, EventArgs e)
         {
-            LoginForm loginForm = new();
-            loginForm.Show();
-            this.Close();
+            mainPage page = new();
+            page.Show();
+            this.Hide();
         }
     }
 }
